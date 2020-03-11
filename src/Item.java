@@ -1,11 +1,10 @@
+package com.nsu.cse373.spring2020.ID1420990;
 
-
-public class Item {
+public class Item implements Comparable<Item> {
     private  String name;
     private int value;
     private double size;
     private double ratio;
-
 
     public Item(String name, int value, double size){
         this.name = name;
@@ -32,6 +31,14 @@ public class Item {
     @Override
     public String toString(){
         return "\nname: "+ this.name + "\nValue: " + this.value + "\nSize: " + this.size + "\n\n";
+    }
+
+    @Override
+    public int compareTo(Item item){
+         if (this.getValue() > item.getValue() || this.getSize() > item.getSize() || this.getRatio() > item.getRatio()) return 1;
+         else if(this.getValue() < item.getValue() || this.getSize() < item.getSize() || this.getRatio() < item.getRatio()) return -1;
+         else
+             return this.name.compareTo(item.name);
     }
 
 

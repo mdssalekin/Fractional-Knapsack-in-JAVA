@@ -1,3 +1,4 @@
+package com.nsu.cse373.spring2020.ID1420990;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -54,7 +55,7 @@ public class FractionalKPImplement {
         ArrayList<Item> itemList = extractDataFromFile();
         Collections.sort(itemList, Comparator.comparingDouble(Item::getRatio).reversed());
         knapsackAlgorithm(itemList);
-        //print(itemList, itemList.size());
+        //Print_Helper.printAll(itemList, itemList.size());
     }
 
     private static void knapsackAlgorithm(ArrayList<Item> items){
@@ -66,14 +67,14 @@ public class FractionalKPImplement {
             if(items.get(i).getSize() + totalWeight <= knapsackCapacity){
                 totalWeight += items.get(i).getSize();
                 totalProfit += items.get(i).getValue();
-                print(items, i, totalWeight, totalProfit);
+                Print_Helper.print(items, i, totalWeight, totalProfit);
             } else {
                 wt = (knapsackCapacity - totalWeight);
                 value = wt * items.get(i).getRatio();
 
                 totalWeight += wt;
                 totalProfit += value;
-                print(items, i, totalWeight, totalProfit);
+                Print_Helper.print(items, i, totalWeight, totalProfit);
                 break;
             }
         }
@@ -102,7 +103,11 @@ public class FractionalKPImplement {
         }
     }
 
-    public static void print(ArrayList<Item> inputArray, int size){
+
+}
+
+class Print_Helper{
+    public static void printAll(ArrayList<Item> inputArray, int size){
         for(int index = 0; index < size; index++){
             System.out.print(inputArray.get(index));
         }
