@@ -100,8 +100,6 @@ public class FractionalKPImplement {
             return itemList;
         }
     }
-
-
 }
 
 class Print_Helper{
