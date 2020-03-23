@@ -1,5 +1,3 @@
-package com.nsu.cse373.spring2020.ID1420990;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.FileReader;

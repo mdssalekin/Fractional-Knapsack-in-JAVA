@@ -1,5 +1,3 @@
-package com.nsu.cse373.spring2020.ID1420990;
-
 public class Item implements Comparable<Item> {
     private  String name;
     private int value;
